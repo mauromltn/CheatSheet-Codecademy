@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS selectors and specificity</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <h1>CSS selectors and specificity</h1>
+        
+        <h2>CSS selectors</h2>
+        <table>
+            <thead>
+                <th>Categories</th>
+                <th>Example</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Universal selector</td>
+                    <td>*</td>
+                </tr>
+                <tr>
+                    <td>Type selector</td>
+                    <td>p</td>
+                </tr>
+                <tr>
+                    <td>Class selector</td>
+                    <td>.class</td>
+                </tr>
+                <tr>
+                    <td>ID selector</td>
+                    <td>#id</td>
+                </tr>
+                <tr>
+                    <td>Descendant selector</td>
+                    <td>div p</td>
+                </tr>
+                <tr>
+                    <td>Child selector</td>
+                    <td>div > p</td>
+                </tr>
+                <tr>
+                    <td>Adjacent sibling selector</td>
+                    <td>p + p</td>
+                </tr>
+                <tr>
+                    <td>General sibling selector</td>
+                    <td>p ~ p</td>
+                </tr>
+                <tr>
+                    <td>Attribute selector</td>
+                    <td>p[title]</td>
+                </tr>
+                <tr>
+                    <td>Pseudo-class selector</td>
+                    <td>p:hover</td>
+                </tr>
+                <tr>
+                    <td>Pseudo-element selector</td>
+                    <td>p::first-line</td>
+                </tr>
+            </tbody>
+        </table>
+    
+        <h2>CSS specificity</h2>
+        <section>
+            <p>
+                CSS selector specificity is determined using the four numbers 
+                (a, b, c, d) in this order:
+
+                <ul>
+                    <li>ID selector (a)</li>
+                    <li>Class, attribute, and pseudo-class selectors (b)</li>
+                    <li>Type and pseudo-element selectors (c)</li>
+                    <li>Inline styles (d)</li>
+                </ul>
+                 
+                When comparing two selectors to determine which one has higher 
+                specificity, we start with the first number (a). If they are 
+                equal, we move on to the second number (b), and so on. The selector 
+                with the highest number at any point in the comparison has higher specificity.
+            </p>
+        </section>
+        <table>
+            <thead>
+                <th>Selector</th>
+                <th>Specificity</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>p</td>
+                    <td>0,0,1,0</td>
+                </tr>
+                <tr>
+                    <td>.class</td>
+                    <td>0,0,1,0</td>
+                </tr>
+                <tr>
+                    <td>#id</td>
+                    <td>0,1,0,0</td>
+                </tr>
+                <tr>
+                    <td>div p</td>
+                    <td>0,0,2,0</td>
+                </tr>
+                <tr>
+                    <td>div > p</td>
+                    <td>0,0,2,0</td>
+                </tr>
+                <tr>
+                    <td>p + p</td>
+                    <td>0,0,2,0</td>
+                </tr>
+                <tr>
+                    <td>p ~ p</td>
+                    <td>0,0,2,0</td>
+                </tr>
+                <tr>
+                    <td>p[title]</td>
+                    <td>0,1,1,0</td>
+                </tr>
+                <tr>
+                    <td>p:hover</td>
+                    <td>0,0,1,1</td>
+                </tr>
+                <tr>
+                    <td>p::first-line</td>
+                    <td>0,0,1,1</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <footer>
+            <hr>
+            <p>Created by Mauro Montane</p>
+        </footer>
+    </main>
+</body>
+</html>
